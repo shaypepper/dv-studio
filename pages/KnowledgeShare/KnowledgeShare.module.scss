@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: rebeccapurple;
+    padding: 16px;
+
+    div {
+        background-color: white;
+        border-radius: 10px;
+        height: 100px;
+        border: 2px white solid;
+    }
+}
+
+
+.purple {
+    color: mediumpurple
+}
+
+.title {
+    text-transform: uppercase;
+}

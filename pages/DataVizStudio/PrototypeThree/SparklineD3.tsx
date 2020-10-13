@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import { line } from "d3-shape";
 import { scaleLinear, scaleTime } from "d3-scale";
 import { timeParse } from "d3-time-format";
-import { extent, bisect } from "d3-array";
+import { extent, bisect, Numeric } from "d3-array";
 import { transformData } from "./helpers";
 import jsonData from "./data";
 import styles from "./SparklineD3.module.css";
 
+type Datum = {
+  value?: Numeric;
+  dateTimeIso?: string;
+};
+
+type Accessor = (Datum) => number;
+
 const SparklineD3 = ({ height, width, padding }) => {
   const [tooltipLine, setTooltipLine] = useState(0);
-  const [highlightedPoint, setHighlightedPoint] = useState({});
+  const [highlightedPoint, setHighlightedPoint] = useState<Datum>({});
   const { cleanData, interval } = transformData(jsonData);
 
   const parseTime = timeParse("%Y-%m-%eT%H:%M:%S.%LZ");
@@ -23,15 +30,15 @@ const SparklineD3 = ({ height, width, padding }) => {
 
   var y = scaleLinear()
     .range([height - padding, padding])
-    .domain(extent(cleanData, (d) => d.value));
+    .domain(extent(cleanData, (d: Datum) => d.value));
 
   cleanData.forEach((d) => {
     d.date = parseTime(d.dateTimeIso);
   });
 
   const chartLine = line()
-    .x((d) => x(parseTime(d.dateTimeIso)))
-    .y((d) => y(d.value));
+    .x((d: Datum) => x(parseTime(d.dateTimeIso)))
+    .y((d: Datum) => y(d.value));
 
   const handleMouseOver = (el) => {
     const z = bisect(

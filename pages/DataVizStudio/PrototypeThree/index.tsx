@@ -1,5 +1,6 @@
 import React from "react";
-import { SparklineD3, SparklineRaw } from "../../../components/Sparkline";
+import SparklineD3 from "./SparklineD3";
+import SparklineRaw from "./SparklineRaw";
 
 const PrototypeThree = () => {
   return (
