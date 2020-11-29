@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
 
-const Shay = () => (
+const Shay: React.FC = () => (
   <>
     <h1>Projects for DataVizStudio</h1>
     <ul>
@@ -19,6 +19,6 @@ const Shay = () => (
       </li>
     </ul>
   </>
-);
+)
 
-export default Shay;
+export default Shay

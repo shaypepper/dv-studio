@@ -4,7 +4,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #333333;
+
+  --primary: #6E88BC;
+  --secondary: #9FBEFA;
+  --accent1: #E5C34A;
+  --accent2: #FFE99A;
+  --chart1: #14956E;
+  --chart2: #A7E2D0;
 }
 
 a {
@@ -14,4 +20,6 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
