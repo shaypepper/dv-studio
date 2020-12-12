@@ -12,7 +12,6 @@ const containerClass = css`
   justify-content: center;
   overflow-y: scroll;
   position: relative;
-  background: linear-gradient(0deg, rgba(232, 232, 232, 1) 0%, rgba(255, 255, 255, 1) 100%);
 `
 type CardProps = {
   className?: string

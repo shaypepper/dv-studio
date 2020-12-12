@@ -2,15 +2,15 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
+  font-family: nytcheltenham, serif;
+  /* background: linear-gradient(0deg, rgba(232, 232, 232, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+  /* background-color: gray; */
   --primary: #6E88BC;
   --secondary: #9FBEFA;
   --accent1: #E5C34A;
   --accent2: #FFE99A;
   --chart1: #14956E;
-  --chart2: #A7E2D0;
+  --chart2: lightpink;
 }
 
 a {
