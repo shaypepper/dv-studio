@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Card'
 import { css } from 'pretty-lights'
 import { containerClass, sermonClass } from './styled'
-import { generateRandomSermon } from './watermarkSermon'
+import { generateRandomSermon } from '../sermons/watermarkSermon'
 
 const buildingClass = css`
   position: absolute;

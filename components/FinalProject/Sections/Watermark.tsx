@@ -2,45 +2,93 @@ import React, { useState } from 'react'
 import Card from '../Card'
 import * as styled from './styled'
 import { css, cx } from 'pretty-lights'
-import { sermon } from './watermarkSermon'
+import * as sermons from '../sermons'
 import DFWMap from '../Map'
 import InfluenceChart from '../InfluenceChart'
-import { ChurchKeys } from '../metadata'
+import SubstanceChart from '../SubstanceChart'
+import { ChurchKeys, churches } from '../metadata'
+import { style } from 'd3'
 
 const Watermark: React.FC = () => {
+  const [selectedChurch, setSelectedChurch] = useState<ChurchKeys>(null)
+  const fillClass = css`
+    &::before {
+      content: '';
+      background-image: url('/img/buildings/watermark.png');
+      background-size: cover;
+      background-position: bottom;
+      position: fixed;
+      z-index: -1;
+      top: 0px;
+      right: 0px;
+      bottom: -30px;
+      left: 0px;
+      opacity: 0.03;
+    }
+
+    [data-church] {
+      opacity: ${selectedChurch ? 0.2 : 0.9};
+      transition: opacity 1000ms ease;
+
+      &:hover {
+        opacity: 0.1;
+      }
+    }
+
+    [data-church='${selectedChurch}'] {
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  `
+
+  const clickHandler = setSelectedChurch
+
+  const ChurchInfo = () => (
+    <>
+      <h2>
+        {churches[selectedChurch]?.pastor}{' '}
+        <span
+          style={{
+            fontSize: '0.75rem',
+            textTransform: 'uppercase',
+            fontWeight: 'lighter',
+            color: 'gray',
+            marginLeft: '6px',
+            fontFamily: 'nytfranklin',
+          }}
+        >
+          {churches[selectedChurch]?.name} - {churches[selectedChurch]?.city}
+        </span>
+      </h2>
+      {churches[selectedChurch]?.fastFacts?.map((fact, idx) => (
+        <p key={`${selectedChurch}-${idx}`}>- {fact}</p>
+      ))}
+    </>
+  )
+
   return (
-    <Card className={styled.containerClass}>
+    <Card className={cx(fillClass, styled.containerClass)}>
       <div style={{ gridArea: 'title' }}>
         <h1>Preaching on Race</h1>
-        <sub>How white pastors of Dallas responded to national tragedies in 2016</sub>
+        <sub>
+          What message did white pastors of Dallas send after a week of national tragedies in 2016?
+        </sub>
       </div>
-      <div style={{ gridArea: 'church' }}>
-        <h2>
-          Todd Wagner{' '}
-          <span
-            style={{
-              fontSize: '0.75rem',
-              textTransform: 'uppercase',
-              fontFamily: 'nytfranklin',
-              fontWeight: 'lighter',
-              color: 'gray',
-              marginLeft: '6px',
-            }}
-          >
-            Watermark Church
-          </span>
-        </h2>
-        <p>
-          Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-          fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-          soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-          facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-          quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-        </p>
+      <div className={styled.churchArea}>
+        <ChurchInfo />
       </div>
+
       <div className={styled.chartArea}>
         <div style={{ zIndex: -1, gridArea: 'map' }}>
-          <DFWMap className={styled.mapClass} landmark={ChurchKeys.Watermark} />
+          <h3>Location</h3>
+          <DFWMap
+            className={styled.mapClass}
+            selectedChurch={selectedChurch}
+            onElementClick={clickHandler}
+          />
         </div>
 
         {/* <div>
@@ -50,53 +98,64 @@ const Watermark: React.FC = () => {
             <p data-connotation="positive">Black Lives Matter</p>
             <p data-connotation="positive">The country has a history of systematic racism</p>
           </div> */}
-        <div style={{ gridArea: 'influence1' }}>
-          <InfluenceChart church={ChurchKeys.TVC} calculationKey={'twitterFollowers'} />
+        <div style={{ gridArea: 'influence' }}>
+          <h3>Influence</h3>
         </div>
-        <div style={{ gridArea: 'influence2' }}>
-          <InfluenceChart church={ChurchKeys.TVC} calculationKey={'attendees'} />
+        <div style={{ gridArea: 'influence1' }}>
+          <InfluenceChart
+            onElementClick={clickHandler}
+            church={selectedChurch}
+            calculationKey={'twitterFollowers'}
+          />
         </div>
         <div style={{ gridArea: 'influence3' }}>
-          <InfluenceChart church={ChurchKeys.TVC} calculationKey={'podcastReviews'} />
+          <InfluenceChart
+            onElementClick={clickHandler}
+            church={selectedChurch}
+            calculationKey={'attendees'}
+          />
+        </div>
+        <div style={{ gridArea: 'influence4' }}>
+          <InfluenceChart
+            onElementClick={clickHandler}
+            church={selectedChurch}
+            calculationKey={'podcastReviews'}
+          />
+        </div>
+
+        <div style={{ gridArea: 'influence2' }}>
+          <InfluenceChart
+            onElementClick={clickHandler}
+            church={selectedChurch}
+            calculationKey={'churchTwitterFollowers'}
+          />
+        </div>
+
+        <div style={{ gridArea: 'substance' }}>
+          <h3>Substance</h3>
+          <SubstanceChart onElementClick={clickHandler} selectedChurch={selectedChurch} />
         </div>
       </div>
 
-      <div style={{ gridArea: 'images', position: 'relative', width: '100%', height: '35vh' }}>
-        <div>
-          <img
-            src="/img/watermark-building.png"
-            alt="Watermark building"
-            className={styled.buildingClass}
-          />
-          <img
+      {/* <img
             src="/img/watermark-todd.png"
             alt="Pastor Todd Wagner"
             className={styled.pastorClass}
-          />
-        </div>
-      </div>
+          /> */}
+
       <div className={styled.sermonContainerClass}>
         <p className={styled.sermonClass}>
-          {sermon.map((paragraph, idx) => {
-            const x = Math.random()
-            const [start, end] = [
-              Math.floor((Math.random() * paragraph.length) / 2),
-              Math.floor(((1 + Math.random()) * paragraph.length) / 2),
-            ]
-            let className = styled.proNothing
-            if (x < 0.1) className = styled.proPolice
-            else if (x < 0.6) className = styled.proBLM
-
+          {sermons[selectedChurch]?.map((paragraph, idx) => {
+            if (typeof paragraph === 'string') {
+              return <span key={`${selectedChurch}-${idx}`}>{paragraph}</span>
+            }
             return (
-              <>
-                <span
-                  data-text="Shay is so cool"
-                  className={cx(styled.spanClass, className)}
-                  key={paragraph.length}
-                >
-                  {paragraph}
-                </span>
-              </>
+              <span
+                key={`${selectedChurch}-${idx}`}
+                className={cx(styled.spanClass, styled.proBLM)}
+              >
+                {paragraph.text}
+              </span>
             )
           })}
         </p>

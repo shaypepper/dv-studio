@@ -44,7 +44,7 @@ const FinalProject: React.FC = () => {
         </Card>
         {/* <MLK></MLK> */}
         <Watermark />
-        <FBC></FBC>
+        {/* <FBC></FBC> */}
         <Card>
           In 2015, Dallas had the largest percentage of evangelicals of any metro area at 38%
         </Card>

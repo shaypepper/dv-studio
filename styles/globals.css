@@ -1,13 +1,15 @@
 html,
 body {
-  padding: 0;
+  padding: 0 2rem;
   margin: 0;
   font-family: nytcheltenham, serif;
   /* background: linear-gradient(0deg, rgba(232, 232, 232, 1) 0%, rgba(255, 255, 255, 1) 100%); */
   /* background-color: gray; */
   --primary: #6E88BC;
+  --problematic: #6E88BC;
   --secondary: #9FBEFA;
   --accent1: #E5C34A;
+  --productive: #E5C34A;
   --accent2: #FFE99A;
   --chart1: #14956E;
   --chart2: lightpink;
@@ -22,4 +24,14 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

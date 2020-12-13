@@ -7,13 +7,13 @@ export const containerClass = css`
   grid-template-areas:
     'title  title'
     'church  sermon'
-    'charts   sermon'
-    'images  sermon';
-  grid-template-rows: min-content min-content 1fr min-content;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3vw;
+    'charts  sermon'
+    'blank  sermon';
+  grid-template-rows: min-content 1fr min-content 50px;
+  grid-template-columns: 0.75fr 1fr;
+  grid-column-gap: min(7vw, 5vh);
   grid-row-gap: 3vh;
-  width: 100%;
+  width: calc(100vw - 40px);
   height: 100vh;
   h1 {
     font-family: NYTCheltenham;
@@ -23,30 +23,34 @@ export const containerClass = css`
     padding: 1rem 0 0;
     text-align: left;
     z-index: 2;
-    background-color: white;
+    /* background-color: white; */
     /* box-shadow: 0px 40px 50px white; */
   }
 
   sub {
     font-size: 1rem;
   }
+
+  /* h2 {
+    animation: 2000ms ease 0s alternate fadein;
+  } */
 `
 
-export const proBLM = css`
-  background-color: var(--primary);
-  color: white;
-
-  &:hover {
-    color: red;
-  }
-`
 export const proPolice = css`
+  background-color: var(--productive);
+  color: white;
+`
+export const proBLM = css`
   &::hover {
     transform: scale(50) translate3d(-100px, -100px, 0px);
   }
   position: relative;
   transform: scale(7);
   background-color: var(--accent2);
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+  }
 `
 
 export const proNothing = css`
@@ -59,9 +63,11 @@ export const sermonClass = css`
   z-index: 0;
   height: 100%;
   align-self: baseline;
-  /* columns: 3; */
-  font-size: 0.45vmin;
-  color: rgb(120, 120, 120);
+  columns: 2;
+  font-size: 0.5vmin;
+  color: rgb(160, 160, 160);
+  text-justify: inter-word;
+  text-align: justify;
 `
 
 export const sermonContainerClass = css`
@@ -69,42 +75,28 @@ export const sermonContainerClass = css`
   overflow-y: scroll;
   height: 100%;
   /* background-color: rgb(40, 40, 40); */
-  padding: 0 10%;
+  /* padding: 0 10%; */
 `
 
 export const buildingClass = css`
   position: absolute;
   bottom: 0;
   width: 100%;
+  opacity: 10%;
 `
 
 export const spanClass = css`
   position: relative;
-
-  &:before {
-    content: 'shay is so cool';
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    /* height: 40px; */
-    background-color: black;
-    color: white;
-    display: none;
-  }
-
-  &:hover:before {
-    display: block;
-  }
 `
 
 export const mapClass = css`
   position: relative;
   /* bottom: 50%; */
-  left: 0;
+  left: -50px;
   width: 100%;
   z-index: -1;
   transform-origin: 0 0;
-  transform: scale(1.2);
+  transform: scale(1.25);
 `
 
 export const pastorClass = css`
@@ -115,14 +107,29 @@ export const pastorClass = css`
   max-width: 230px;
 `
 
+export const churchArea = css`
+  grid-area: church;
+  animation: 2000ms ease 0s alternate fadein;
+  height: 100%;
+  h2,
+  p {
+    animation: 2000ms ease 0s alternate fadein;
+  }
+`
+
 export const chartArea = css`
   grid-area: charts;
+  align-self: baseline;
   position: relative;
   display: grid;
   grid-template-areas:
-    'map bars bars bars'
-    'map influence1 influence2 influence3';
-  grid-template-columns: 3fr 1fr 1fr 1fr;
+    'substance substance substance'
+    'map influence influence'
+    'map influence1 influence2'
+    'map influence3 influence4';
+
+  grid-template-columns: 2.5fr 1fr 1fr;
+  grid-template-rows: min-content min-content 1fr 1fr;
 
   p {
     font-size: 1rem;
@@ -133,19 +140,5 @@ export const chartArea = css`
     padding: 10px;
     margin: 10px 10px 10px 0px;
     width: fit-content;
-
-    &[data-connotation='negative'] {
-      background-color: var(--accent1);
-      &:hover {
-        background-color: var(--accent2);
-      }
-    }
-
-    &[data-connotation='positive'] {
-      background-color: var(--primary);
-      &:hover {
-        background-color: var(--secondary);
-      }
-    }
   }
 `
