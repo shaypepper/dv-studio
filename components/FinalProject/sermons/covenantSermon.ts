@@ -11,7 +11,7 @@ const sermon = [
   "And we're here to bless the city. We're here to call some things in to order in the spirit, because enough is enough.",
   "And these demons of violence, we don't fight flesh and blood.",
   {
-    statementSentiment: 'something',
+    statementSentiment: 'sanctimoniousTrivialities',
     text:
       "We fly. We fight high principalities that are in the middle heavens who want to destroy everything that's good. And one of the reasons that Dallas is under attack specifically is because Dallas is a tremendous city of destiny. Some of the greatest revelations and revivals in history emanated from Dallas. Dallas is a special place to God. Some of the greatest churches in the world are in Dallas, this being one of them, man.",
   },
@@ -29,7 +29,7 @@ const sermon = [
   "That powers in my hands alone for this time, came into the world, and that's what we have to recognize as the kingdom of God, we're here at the right time, in the right place for the right reason.",
   "And we can do this. We're reconcilers. We're reconcilers. We can fix anything through the power of the cross.",
   {
-    statementSentiment: 'something',
+    statementSentiment: 'callToAction',
     text:
       "Thirdly, it doesn't thrill me to say this, but I believe it will get worse before it will get better. I don't think we've seen the end of what we're seeing now. And one reason is because there's not enough of us that are yet activated to many of us still comfortable.",
   },
@@ -54,7 +54,7 @@ const sermon = [
   "And I've got a friend that's a has said I don't know them, I just want to do something now I know we all want some deep revelation, but let me share something with you with the troubles we're seeing in the nation right now. And there are some reasons for that that I want to touch on. But if there are more than 300 million professing Christians that believe in Jesus in this nation, what if we today sent 300 million people out of churches all over America with a heart to look for an opportunity to do something for someone as an act of love, undeserved?",
   'We change the world.',
   {
-    statementSentiment: 'something',
+    statementSentiment: 'encouragingEmpathy',
     text:
       "We don't listen enough disenfranchized people, oppressed people, poor people, struggling people, broken, people listening to them is a form of loving them.",
   },
@@ -72,7 +72,7 @@ const sermon = [
   "Is it really love at all? You know, the levels at which we love are just not at the Christlike level yet, the apostle Paul and Peter and the early apostles were writing things like this, pray for those in authority, even your emperor and Rome. This was when they were under the unbelievable persecution and domination of Nero, who was the worst emperor of Rome ever had for Christian persecution. Impulse's pray for him. Pray for him.",
   "I'm not going to pray for, you know, you pray for it, you pray for all those in authority, you know, if I apply this now, every time we see an unfortunate and unjust, a disappointing, a disgusting outpouring of some kind of authoritative violence against a citizen. Our temptation is to do other than pray for the one who did the shooting or the killing or the destroying.",
   {
-    statementSentiment: 'something',
+    statementSentiment: 'goodCopsBadCops',
     text:
       "And yet Paul says of Nero, pray for him. You know, there are no perfect people and cops are just people. And here's one of the things I don't want to let you allow of yourself. For the 10000 to one that are good people doing their job to keep us safe, don't allow the one who makes a mistake or is a racist or does have a heart full of hate.",
   },
@@ -92,8 +92,11 @@ const sermon = [
   "And and here's the thing I said, if you feel like that loving someone who is hungry is satisfied by you calling the church and chewing us out because we haven't run to give them a sack of groceries, then we'll never be the church.",
   "I said, Dear sister, you are the church. We can't build a program for every need we have to leave out of here by the thousands today. Loving people meeting needs waking up with fresh Hassad every morning.",
   "So let me finish with this. We pray for those in authority, we build bridges, we pray for church unity, that's a difficult one. We pray for people different than ourselves.",
-  '****We study ways to be peacemakers and not just peacekeepers.',
-  '****We remain calm. We were made for this our.',
+  {
+    statementSentiment: 'absenceOfTension',
+    text:
+      'We study ways to be peacemakers and not just peacekeepers. We remain calm. We were made for this hour.',
+  },
   "It may get worse before it gets better, but we've already laid our lives down when we were saved, I don't know if they told you that or not, but when you make Jesus Lord of your life, you lay yourself on his altar and you say, God, not my will, but yours be done. I don't have a life outside of you.",
   "And if we have to give our lives in the line of duty of loving people, then so be it is our ticket to heaven. Because my highest goal in life, and sometimes you have to count this cost and I'm going to end with this because it's a really important point.",
   "I've counted this cost because to be honest with you, I'm in a stage of my life where a beautiful new generation is taking over more all the time. And I've got the right. And if I can say so without sounding egotistical, I've earned it. For more than 40 years of faithful pastoral ministry, I can slow down and I could live an easy life right now and I could choose to just keep my mouth shut and let stuff happen.",
@@ -102,31 +105,24 @@ const sermon = [
   "If you seek only to save your lower form of human life, you will lose the higher God life that I've called you, too.",
   "But if you will lose or give up your lower form of life, you will find the higher form of life. That's what we want. Our goal is not to live a life of comfort. Our goal is to be reconcilers thousands of reconcilers, building bridges, loving people, fixing things. But in closing, I got to say this. I don't want to be crass. I don't want to be inflammatory. I don't want to take advantage.",
   "I but I have to say something I want to see and I would like to challenge and I'm not going to use African-American and Caucasian and all these other terms. I'm just a white guy talking to some white and black folks and brown and other things. OK, let's just keep it on the color palette.",
-  '****I am I am fearfully and in a godly way, appealing to the comfortable, in some cases the white, some cases black or brown, the comfortable. But I want to speak to white folks for just a minute. We need to hear more from you.',
   {
-    statementSentiment: 'something',
+    statementSentiment: 'callToAction',
     text:
-      "Sometimes, and I'm not a big social media guy, but I have a pretty strong following on Twitter, and that's really the only thing I do. I don't do Facebook and all that. I don't have time for it. But I've noticed something. And granted, this is a small sampling, but I've noticed something.",
-  },
-  {
-    statementSentiment: 'something',
-    text:
-      "Any time I tweet something that's a little edgy about what kind of things we ought to be doing as activist in Christ, I notice that I get retweeted twenty five to one by black people over white white people.",
+      "'I am I am fearfully and in a godly way, appealing to the comfortable, in some cases the white, some cases black or brown, the comfortable. But I want to speak to white folks for just a minute. We need to hear more from you. Sometimes, and I'm not a big social media guy, but I have a pretty strong following on Twitter, and that's really the only thing I do. I don't do Facebook and all that. I don't have time for it. But I've noticed something. And granted, this is a small sampling, but I've noticed something. Any time I tweet something that's a little edgy about what kind of things we ought to be doing as activist in Christ, I notice that I get retweeted twenty five to one by black people over white white people.",
   },
   "Don't say anything. I don't think that means it's because they're bad. I think it's because we're comfortable.",
   "If I can be this open for just a moment, I have to understand and I'm going to ask you to I don't think we should live all the time with a chip on our shoulder or talking about how bad we had it.",
   "But I've never been a black man in America. Maybe my life would be totally different had I been. I know I wouldn't have been treated the same.",
   "Now that's changing some of it's been forced.",
-  '****So government has tried and schools have tried and corporate world has tried. And the church remains, for the most part, stodgy and segregated. Covenant, you are the exception. You are the one out of thousands where this happens that you see around you.',
-  "I know we have a price to pay for that, but it's a price worth paying, if you all will understand that whoever you are, black, yellow, red, white, brown, whoever you are, I'm called to this.",
   {
-    statementSentiment: 'something',
-    text: "I'm a reconciler. I'm going to talk to people that are other than my own kind.",
+    statementSentiment: 'importanceOfDiversity',
+    text:
+      "So government has tried and schools have tried and corporate world has tried. And the church remains, for the most part, stodgy and segregated. Covenant, you are the exception. You are the one out of thousands where this happens that you see around you. I know we have a price to pay for that, but it's a price worth paying, if you all will understand that whoever you are, black, yellow, red, white, brown, whoever you are, I'm called to this.",
   },
   {
-    statementSentiment: 'something',
+    statementSentiment: 'callToAction',
     text:
-      "I'm going to be a part of the great speckled bird. I am a part of the glorious body of Christ. The value of the coat of many colors was its many colors. I am a part of that bride of Christ in the Book of Revelation that John saw that said and I saw a number that no man could no out of every kindred tongue tribe and nation.",
+      "I'm a reconciler. I'm going to talk to people that are other than my own kind. I'm going to be a part of the great speckled bird. I am a part of the glorious body of Christ. The value of the coat of many colors was its many colors. I am a part of that bride of Christ in the Book of Revelation that John saw that said and I saw a number that no man could no out of every kindred tongue tribe and nation.",
   },
   "That's what Jesus died to build, and we can either be comfortable or we can tell the truth, we can either be comfortable or we can build bridges.",
   "And we're not always going to say and do exactly the right thing, but we got to do something. And I can be accused of a lot of things.",

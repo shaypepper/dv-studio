@@ -4,7 +4,7 @@ import { css } from 'pretty-lights'
 const paragraphClass = css`
   padding: 32px;
   font-family: serif;
-  background-color: var(--accent1);
+  background-color: var(--productive);
   margin: 15vh auto;
   width: 60%;
 `

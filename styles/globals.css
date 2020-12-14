@@ -5,14 +5,12 @@ body {
   font-family: nytcheltenham, serif;
   /* background: linear-gradient(0deg, rgba(232, 232, 232, 1) 0%, rgba(255, 255, 255, 1) 100%); */
   /* background-color: gray; */
-  --primary: #6E88BC;
-  --problematic: #6E88BC;
-  --secondary: #9FBEFA;
-  --accent1: #E5C34A;
-  --productive: #E5C34A;
-  --accent2: #FFE99A;
-  --chart1: #14956E;
-  --chart2: lightpink;
+  --neutral: hsl(195, 83%, 16%);
+  --label: hsl(195, 80%, 38%);
+  --problematic: #06d6a0;
+  --productive: #ffd166;
+  --highlight: #219ebc;
+  --problematic: #ef476f;
 }
 
 a {
@@ -24,6 +22,8 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: var(--neutral);
+  /* fill: var(--neutral); */
 }
 
 @keyframes fadein {

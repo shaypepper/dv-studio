@@ -6,10 +6,10 @@ export const containerClass = css`
   max-width: 1300px;
   grid-template-areas:
     'title  title'
-    'church  sermon'
+    'church  substance'
     'charts  sermon'
     'blank  sermon';
-  grid-template-rows: min-content 1fr min-content 50px;
+  grid-template-rows: min-content min-content min-content 50px;
   grid-template-columns: 0.75fr 1fr;
   grid-column-gap: min(7vw, 5vh);
   grid-row-gap: 3vh;
@@ -37,16 +37,14 @@ export const containerClass = css`
 `
 
 export const proPolice = css`
-  background-color: var(--productive);
+  background-color: var(--problematic);
   color: white;
 `
 export const proBLM = css`
   &::hover {
-    transform: scale(50) translate3d(-100px, -100px, 0px);
+    transform: scale(50);
   }
-  position: relative;
-  transform: scale(7);
-  background-color: var(--accent2);
+  background-color: var(--productive);
   opacity: 0.85;
   &:hover {
     opacity: 1;
@@ -63,11 +61,14 @@ export const sermonClass = css`
   z-index: 0;
   height: 100%;
   align-self: baseline;
-  columns: 2;
-  font-size: 0.5vmin;
-  color: rgb(160, 160, 160);
+  columns: 5;
+  font-size: 0.3vmin;
+
   text-justify: inter-word;
   text-align: justify;
+  span {
+    color: rgb(160, 160, 160);
+  }
 `
 
 export const sermonContainerClass = css`
@@ -114,6 +115,20 @@ export const churchArea = css`
   h2,
   p {
     animation: 2000ms ease 0s alternate fadein;
+  }
+
+  p {
+    font-family: nytfranklin;
+    line-height: 1rem;
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+
+    span {
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
   }
 `
 

@@ -21,54 +21,54 @@ export const watermarkSermon = [
   `Somebody could have listened to him and understood his anger and his rage, understood how he was thinking, what it was that was motivating him. Our police chief was on CNN this morning, and he talked about the fact that this guy was convinced that what he was doing was righteous. He had other plans to eliminate more and more people, systematically developing them.`,
   `He kind of accelerated his plans when he heard about what happened in a few spots that were going on around the country and the opportunity he had not far from his home in Mesquite. What Micah Johnson needed to do with his anger was meet somebody who understood hurt and pain and frustration and what to do with it.`,
   {
-    statementSentiments: 'acknowledgingInjustice',
+    statementSentiment: 'acknowledgingInjustice',
     text: `One of the things that has been shocking to me is how much my African-American brothers and sisters, many of whom are members of this church, have been blessed to hear me say that I understand that there is something unique about the African-American experience in this country that is different than the white American experience. It is. It's different. I know that sometimes makes some people uncomfortable, but listen. I forget.`,
   },
   {
-    statementSentiments: 'acknowledgingInjustice',
+    statementSentiment: 'acknowledgingInjustice',
     text: `My friend Lecrae… We buy his music and love him. It has been well said that we all love that Lecrae is a Christian rapper. Sometimes we're uncomfortable that he's a black Christian rapper. Lecrae just says, "Todd, when I drive through Dallas streets and look like I look, the way I'm treated sometimes isn't the same way you're treated." He didn't say, "Every cop hates me." He didn't say, "Every white man is a racist." He didn't say, "Every cop is bad." He just said, "You need to know that it's different."`,
   },
   {
-    statementSentiments: 'acknowledgingInjustice',
+    statementSentiment: 'acknowledgingInjustice',
     text: `I was talking to my friend Anthony. He's a member of this church. He said, "You need to know, Todd. When I was 16, I was driving. I was going to Walmart at night, at 9:30. I had just changed lanes without my blinker. I got pulled over, and I realized that my experience was not normal, and I was treated in a way that made me really uncomfortable. I called my dad, and my dad said, 'Welcome to the world.' I talked to my friends who are African American. They say, 'When my kids turn 16 and get their license, I sit down and have a talk with them.'"`,
   },
   {
-    statementSentiments: 'acknowledgingInjustice',
+    statementSentiment: 'acknowledgingInjustice',
     text: `Anthony told me, "When I saw that happened Thursday night, I went right away to my office. I made sure my license was not expired and my insurance was up to date, because I didn't want to be digging around in my glove box and having them wonder what I'm doing."`,
   },
   `I dig around in my glove box all the time when officers walk up to my car when my wife is speeding, and I'm in the car with her. That's a different experience. I have to be honest with you.`,
   {
-    statementSentiments: 'acknowledgingInjustice',
+    statementSentiment: 'acknowledgingInjustice',
     text: `I shared this, and I was shocked that my African-American friends… I grew up with African‑American friends. I spent the night at their house. They spent the night at my house. As much as a guy can be color blind, I have always thought of myself as color blind. In locker rooms and playgrounds… I just was with black people. I just didn't think of color, but I also didn't think enough of what I needed to say to them.`,
   },
   {
-    statementSentiments: 'blackLivesMatter',
+    statementSentiment: 'blackLivesMatter',
     text: `The very first time I heard, "Black lives matter," I thought, "That's ridiculous. That's the most racist comment I've heard in a long time. What do you mean, black lives matter? Of course, black lives matter. Why would you say that? Why would you not say, 'White lives matter,' or, 'Hispanic lives matter'? What are you doing? Why are you being so divisive? The song says, 'Jesus loves the little children. All the children, red, yellow, black, and white.' It's right there. Of course, black lives matter."`,
   },
   {
-    statementSentiments: 'commendingTheDemonstrators',
+    statementSentiment: 'commendingTheDemonstrators',
     text: `That was my initial response. I heard godly guys who I love start the hashtag #BlackLivesMatter. By the grace of God, what I did was I said, "What are you doing? Why are you saying that? That looks divisive to me." What my black friends said was, "Todd, what we're doing…" Frankly, it was a gentleman I met whose name was Mika Edmondson who gave it to me in the clearest terms. Mika is a PhD. He's a 33-year-old African-American Reformed pastor who has a PhD in Martin Luther King Jr.'s theology of righteous suffering.`,
   },
   {
-    statementSentiments: 'blackLivesMatter',
+    statementSentiment: 'blackLivesMatter',
     text: `He just said, "Todd, what you need to know, man, is when I'm saying this…" He gave me this illustration. He said, "Todd, I know you care about unborn children, right? You care about right-to-life issues. You care about kids in the womb and the fact that almost 60 million Americans have been destroyed over the last almost 40 years, right? You talk a lot about that, right?" I go, "Yes, I do." He goes, "Let me ask you a question. When you say, 'Unborn lives matter,' what are you saying? Do you want me to respond, 'Of course, Todd. All lives matter'? Do you think when you say that, I think that you don't think that people out of the womb matter? No. What you're doing is contextualizing it because you see a segment of society that is hurting, that is being mistreated, that is being discarded because we don't value it or it's inconvenient to us or in the way. When you talk about unborn humans, you're not saying that born humans don't matter. You're just trying to say, 'Hey, do you understand what is going on here?'"`,
   },
   {
-    statementSentiments: 'blackLivesMatter',
+    statementSentiment: 'blackLivesMatter',
     text: `I have another friend who said, "When I say that my house matters, and you go, 'Well, every house matters. People need houses,' but my house is on fire, it's not compassionate for you to say, 'All houses matter.' When I say, 'My stomach needs food,' and you're well-fed, and you say, 'All stomachs need food,' but I don't have food, you're not helping me."`,
   },
   `What I had to learn… It didn't take me long. I have continued to learn. I'll tell you what I learned just this week. What I had to learn is what Scripture says in Proverbs 18:2. It says, "A fool does not delight in understanding, but only in revealing his own mind." Proverbs 18:13 says, "He who gives an answer before he hears, it is folly and shame to him."`,
   {
-    statementSentiments: 'denouncingTheMovement',
+    statementSentiment: 'denouncingTheMovement',
     text: `My first response… I was asked, "Todd, what do you think about the Black Lives Matter movement?" I go, "Well, I think all lives matter." It was my first and visceral response. It's true. All lives matter. I don't know much about the movement, because movements have all kinds of individuals in them. As much as what Micah Johnson did was part of any movement… That's a no good movement.`,
   },
   {
-    statmentSentiments: 'inflammatory',
+    statementSentiment: 'inflammatory',
     text: `That doesn't need understanding. It needs judgment. I'm glad police used deadly force on him. When they said, "You can repent of what you're doing and come out with your hands up in peace, or you can stand there and receive judgment," he chose the latter. When men do what seems right to them, it always leads to death. Listen to me. We have to learn to listen to one another and really have some understanding.`,
   },
   `I wish that Micah Johnson, living right here in the southern United States with all kinds of Christians around him in Mesquite, would have run into a real Christian who said, "Tell me about your pain. Tell me about some of your pain that you maybe brought back from Afghanistan. Tell me about some friends maybe who you have known who have experienced some level of injustice.`,
   {
-    statementSentiments: 'invalidating',
+    statementSentiment: 'invalidating',
     text: `Tell me how you're convinced that because you're a black man, that nobody is going to care for you, and that police officers are against you. I don't want to sit there and legitimize your feelings if they're wrong, but I do want to listen to them. I want to understand. Here's the deal. If you don't deal with your wounds, they're going to get worse."`,
   },
   `What shocked me is when I told my friends that I understood that there is a difference in the lives they're experiencing in America sometimes than mine, and I listened to their stories, and I told them, "Man, if you're telling me that you feel like we don't care if you're treated unjustly," will you forgive me? I want you to know that I care when you're treated unjustly.`,
@@ -77,7 +77,7 @@ export const watermarkSermon = [
   `Here's my point. We have to learn to care about how people feel. Spiritual wounds and physical wounds have a lot in common. Let me just walk you through that. When you have a physical wound, it requires care. When you have a spiritual wound, it requires care. If ignored, a physical wound only gets worse. It festers. It grows. It gets infected.`,
   `When you have a spiritual wound, when you're dealing with your hurt, your anger, your bitterness, your wrath, your lack of forgiveness, without doing it in a way that is going to actually help it be made better, it's only going to get worse. It needs care. When you have a physical wound, it has to be cleansed from dirt. You have to get the dirt out of there, or it's going to cause real problems. If you have a spiritual wound, you have to get the uncleanliness of sin and the anger of man and the lack of forgiveness out of it.`,
   {
-    statementSentiments: `expectingForgiveness`,
+    statementSentiment: `expectingForgiveness`,
     text: `A lack of forgiveness is like drinking poison and hoping somebody else dies. It will eventually distort you and make you into a monster. We saw one unleashed on Thursday night.`,
   },
   `A physical wound is something for which a surface healing doesn't hurt. You have to clean it out. I remember when I was bitten by a brown recluse and it began to eat my flesh.`,
@@ -89,7 +89,7 @@ export const watermarkSermon = [
   `Spiritual wounds… God can just wave a wand over the United States of America and make us well, but he typically uses humans who know him, who have been made well by him, who themselves are recipients of grace in order to bring grace to others. Spiritual healing is only a work of God.`,
   `Some of you guys are so kind to come up to me and say things like, "Todd, God used you in my life." I'm like, "That's exactly right. God did the healing. He might have used my words, my reminding you of the source of your healing, and I'm glad I was an instrument of grace to you, but glory to God. I am a steward of the mysteries of God and a servant of Christ, and it is his healing that comes into your life, not Watermark's, not Todd's, Jesus'."`,
   {
-    statementSentiments: 'violentProtestorsAreTheProblem',
+    statementSentiment: 'violentProtestorsAreTheProblem',
     text: `What happens right now in our country is the church has to be the instrument through which healing comes, not giving them a superficial place to go with some anesthetic surface, alcohol-smelling remedy that will last for a moment but deal with the root issue. Church, this is your moment. There are Micah Johnsons still all over our city, all over our country, all over our world. Christ wants you to go to them and love them.`,
   },
   `When they act out in anger, you realize it is hurt people who hurt people, and you just do what you can to say, "Man, tell me about that pain. Tell me about that frustration. Let me listen to you. What do you mean when you say, 'Black lives matter'? If you mean, 'Black lives matter; therefore, I can kill cops. Black lives matter; therefore, I'm going to strike out injustice in violence,' I have no patience for that (Romans 13), and the ministers of God, law enforcement, military, and others, should execute strong and swift judgment against them."`,
@@ -120,7 +120,10 @@ export const watermarkSermon = [
   `When people say, "You don't love me. Do you know that I matter?" I don't want to say, "I do love you. Yes, you matter," and move on. You go, "Help me understand that. That sounds like you're hurting. If there is something I personally have done that has hurt you, let me come alongside, understand, repent, and seek your forgiveness."`,
   `If they go, "Todd, not you, but too many other people, and I'm angry," go, "Well, I'm angry against injustice too. Do you feel like I'm not? Let's go about injustice God's way, not a way that seems right to us, which doesn't accomplish the righteousness of God." Gang, it's time. It has been time. You know, when I talk to reporters… It's in that letter I posted early Thursday morning. You have a copy of it in the back of your prayer guide right there.`,
 
-  `I just said I'm not surprised. I'm not shocked. We're reaping what we sowed. I want to be a part of sowing peace and righteousness and faith and love and the gospel of Jesus Christ. Are you ready to do it with me, church? Here's how it goes. That righteousness and peace will only come as we abide with Christ. Apart from him, we can do nothing. We have nothing to offer anybody.`,
+  {
+    statementSentiment: 'theAnswerIsJesus',
+    text: `I just said I'm not surprised. I'm not shocked. We're reaping what we sowed. I want to be a part of sowing peace and righteousness and faith and love and the gospel of Jesus Christ. Are you ready to do it with me, church? Here's how it goes. That righteousness and peace will only come as we abide with Christ. Apart from him, we can do nothing. We have nothing to offer anybody.`,
+  },
   `We don't need philosophies. We don't need the wisdom of men. We need men and women who humbly walk with God and love one another as they want to be loved. When you're hurting, you want people to listen. When you run into hurting people, and you understand that hurt people hurt people, move toward them with grace. It's not a permission slip for their pain to cause pain to others, but move toward them with the healing balm of the gospel. Tell them how you have been healed.`,
   `What I'm going to ask you to do in these next few minutes is to remind yourself where healing comes from. In a moment, we're going to turn, and we're going to spend about 15 or 20 minutes in prayer, and we're going to just lift up our city. We're going to lift up the Smith family. We're going to lift up our city's leaders. We're going to pray for the church. We're going to pray for stuff that is going on in our hearts that is not consistent with what God wants.`,
   `We're going to go to work. When man works, man works. When man prays, God works. We're going to let God go to work in our hearts so that when we get out of here and continually pray without ceasing, we're going to love as he would love because we're going to walk with him. We're going to be a source of grace in this city. Where we see anger, we're going to help people deal with their anger in a way that will lead to healing.`,
@@ -133,7 +136,7 @@ export const watermarkSermon = [
   `Lord, it wasn't so much about us trying to get you aligned with our will. That was all about trying to get us aligned with your will. Father, we want to seek your face. We want to turn from our wicked ways, and we want to be your people.`,
   `Would you help us even in the remaining time we have together and the things you have given us to remember you and respond correctly to you? Would you just burn in our hearts the gospel truth so we can go and take that and heal hurting people? Thank you, Lord, that you have prepared us for such a time as this. We love you. In Jesus' name, amen.`,
   {
-    statementSentiment: 'fightAgsintInjustice',
+    statementSentiment: 'fightAgainstInjustice',
     text: `You know, I have purposed with my friends, many of whom are African-American leaders in this community, that if they're looking for a race war, they're not going to get it in Dallas, Texas. We're going to love each other here, and we're going to live in one accord, and it's going to start with the church. It's going to start with people who understand why other people are still angry, and we're going to listen to them, and we're going to take to them the hands and feet of Christ, fight against injustice of all kinds.`,
   },
   `One of the things that has been shocking to me here through the last couple of days is how much it has meant to my African-American brothers and sisters when I have just told them I understand their pain or I want to understand more. It shouldn't be a surprise to me because my wife, every time I listen to her, says, "I appreciate the way you're listening and living with me as the Bible commands, in an understanding way."`,
@@ -158,7 +161,10 @@ export const watermarkSermon = [
   `One day, there will be a provision that is going to have your sons and daughters all know me, and everybody will be forgiven. You will be one with me." He said, "That new covenant is about to be cut right now through my blood which is about to be shed." The blood of Christ shed for you.`,
   `I love our little evangelical community church tradition. We have grape juice and not wine because it just makes your mouth happy when it hits it. Doesn't it? Man, listen. If it is true, if this crazy story is true, that God is not angry at us in our sin… He goes, "Are you guys done fighting? Do you want to get along? Do you want to be healed? Come to me. Learn to love as I have loved. Give your lives for one another. Understand each other. Be reconciled to me that I can reconcile you to one another."`,
   `Man, that ought to make us really glad that that is possible. We see it happen. The world ought to look at us. We're a church of 70 different nations of origin, members of Watermark Community Church. Did you know that? We get along. We're in community together. We care for one another. We sing together.`,
-  `The world ought to go, "How does that happen? How can the nations unite?" The answer is Jesus. He's the Prince of Peace. That's what's going on here. Our mark is love. We have to tell each other we love each other, but we only do that out of an overflow of the love we have received. Let me remind you of that love right now. Let's sing it to one another. Stand with me.`,
+  {
+    statementSentiment: 'theAnswerIsJesus',
+    text: `The world ought to go, "How does that happen? How can the nations unite?" The answer is Jesus. He's the Prince of Peace. That's what's going on here. Our mark is love. We have to tell each other we love each other, but we only do that out of an overflow of the love we have received. Let me remind you of that love right now. Let's sing it to one another. Stand with me.`,
+  },
   `What a perfect way to end. "Bear your cross as you wait for the crown. Tell them all where the treasure is that you've found." That's what we do. That's what the church does. God has shouted to them right now in their pain, and they're wondering, "How do we do this?" Literally, media outlets across the country, people around the city are saying, "What do we do? How do we do this?"`,
   `You have to tell them about the treasure you've found, how we can come together in peace. Guys, you do know this. Black lives matter. You do know that, right? You know that gay lives matter. Did you know that gay lives matter? Gay lives matter. Did you know that people with gender dysphoria matter to God? Did you know that God hates broken sexuality? God hates broken racism. God hates broken marriages.`,
   `God hates divorce, but did you know that divorcees matter to God? Did you guys know that? They ought to matter to us, every single one of them. When you talk to your homosexual friends, they think you hate them. When is the last time you went to one of your friends and said, "I just want you to know that I love you, and God loves you, and I love you enough to tell you that I think what you're doing is destructive, just like maybe me in my heterosexual perversion. It's destructive, but God loves me, and this is what he has done for me in my brokenness."`,

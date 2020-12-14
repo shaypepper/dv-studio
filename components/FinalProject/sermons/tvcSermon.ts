@@ -20,33 +20,33 @@ export const sermon = [
   "He's not waiting for me to be perfect before he uses me, in fact, oftentimes he'll use my imperfection for his glory.",
   "That's crazy. So let me pull it down to this, then.",
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text:
       'Because there are no perfect people and we are all works in progress, that means all systems and structures created by men are intrinsically faulty and broken.',
   },
   'Because there are no perfect men, there can be no perfect systems, there are systems that are better than others, but but there is no no ship in culture, society, government rule, regulation that does not have cracks in its hull.',
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text:
       "They don't exist because there's no such thing as a sinless man outside of Christ. There are men seen by God as holy, spotless, blameless in inside, but we're broken and we build broken things. And if you're a Christian, this is our world view right now. With that said, let me walk through some historical facts. These aren't my opinions. These are historical facts. There has been no ethnic group that has borne the brunt of the brokenness of systems and structures in the United States of America like our African-American brothers and sisters have, we do not have equal historical place in America.",
   },
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text:
       'History shows on repeat the betrayal of African-Americans by the very systems and structures that were meant to protect them from the Emancipation Proclamation to 40 acres and a mule that was very quickly taken back from African-Americans and handed back over to former plantation and slave owners, only to institute a new type of slavery on end to Jim Crow, to the Great Migration, into the civil rights. ER, we have nothing in our history but that the systems and structures built to protect and defend have oftentimes bore the dark edge of their blade on African-Americans.',
   },
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text: "I just don't see how you can argue that this is our history. This is our history.",
   },
   'This is true.',
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text:
       'So because this is true, this has created a very real fear and rage, a version of PTSD that haunts our African-American brothers and sisters.',
   },
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text:
       "And and so I think the only shot we have on progress. Is to develop a deep sense of empathy that is not paternalistic. An acceptance that history has broken some things that systems certainly are broken and an empathy in our hearts towards that so that we might actually mourn with those who mourn. Because I can put it in this arena, maybe it's helpful, it is not uncommon for me to have to go to the hospital because a member of our church has died suddenly and tragically. When I show up and there's the wife or there's the husband or there's the mom and dad sobbing their eyes out, I don't start digging around for the facts before I'm willing to enter into their mourning. OK, listen, I see that you're really broken and really angry. Let me tell you theologically why you shouldn't be. I don't show up and see a morning and see him broken and crying out angry, and I don't enter that space and go, you know, now, where were you when that happened? Guston, you think to do I mean, how wicked of a son of a gun would I be if that's how I handled brokenness? The inability of primarily Anglos to enter the sorrow of our brothers and sisters stems from a lack of proximity, stems from a lack of empathy and a lack of understanding of some of the systemic issues of our nation's history that has brought us to this point. And let me say you the email. I'm white. I like being white. I don't feel guilty for being white. I'm not operating out of white guilt, I'm operating out of a desire to be the people of God in a very dark time, in a very dark time.",
   },
@@ -203,11 +203,15 @@ export const sermon = [
     text:
       "I think at an individual level, we get serious about diversifying our friendship groups. I love Matt, how at the top of every year you kind of encourage us to look at our friend landscape. And so does everyone look like you or do you come from the same background? I think there's rich fruit in sharing stories, you know, all throughout the year and building relationships with people that are not like you. I know here at the Village Flower Mound, we have people gathering women. At least I know I'm in one where we're completely different, eight of us. But we're coming to the table and saying, I want to know you. I want to know your people, know your history. So I would encourage everyone in here to kind of look at their landscape and go, where can I grow in this area? Who can I begin to engage with? That's nothing like me. So that when tragedy happens, you're pressing in with someone you have relationship with.",
   },
-  "OK, so let me press I, I think last time we really kind of looked at it. You're looking at twelve thousand thirteen, fourteen thousand people at the village church, maybe 300 of them, 400 of them African-Americans, which like that's such a big move forward from ten years ago that I'm super encouraged by it and yet super depressed by it simultaneously. So I feel like when I have that conversation every year, like the push I get from both African-Americans and whites as whites are like, where are they? And African-Americans are like 32 people just invited me to lunch.",
+  {
+    statementSentiment: 'importanceOfDiversity',
+    text:
+      "OK, so let me press I, I think last time we really kind of looked at it. You're looking at twelve thousand thirteen, fourteen thousand people at the village church, maybe 300 of them, 400 of them African-Americans, which like that's such a big move forward from ten years ago that I'm super encouraged by it and yet super depressed by it simultaneously. So I feel like when I have that conversation every year, like the push I get from both African-Americans and whites as whites are like, where are they? And African-Americans are like 32 people just invited me to lunch.",
+  },
   "So and I'm a true story. Yeah, it's a true story. Right. So, like, I can see what I'm saying. I'm African-American brothers is like, oh, my gosh, here it is. Just a tidal wave of white invitations are about to come over. So. So how do we position in proximity? Because that's my question. And there's something going on here I'm trying to pull out.",
   "And and and so I think what I'm trying to pull out is that now that the shops have been built here and everything's here, like we just don't need to leave much anymore. And when you don't leave, you don't know that two exits down from us.",
   {
-    statementSentiment: '',
+    statementSentiment: 'acknowledgingInjustice',
     text:
       "They don't look much like us at all, and their life experience hasn't been what our life experience has been and and the proximity piece is what I'm really trying to kind of dig into that. If we've got any real shot at empathy that is a game changer, then some of us do need to move and some of us do need to change where we work out, where we get our haircut and where we and those are the kind of things I'm trying to pull on because there's just not it's not we're so far away from even being close to being able to get in proximity with one another. I mean, it's going to be one African-American for every, you know, 22 white people. It's going to be extremely difficult. But we've got this community just south of us. And it's back to your mission point that we just haven't figured out how to engage and and aren't willing to engage, it seems, other than to maybe write a check, which I think fine, but to our shame to not want to get your hands dirty.",
   },
@@ -242,10 +246,14 @@ export const sermon = [
       "Let's do it together and thank you. I talk about emotional proximity and I feel bonded to your heart because you take the time to create the space and care about this deeply. So thank you. Thanks, Mike. Thanks. Thank you.",
   },
   'All right, guys, thank you.',
-  "So one of the things I wanted to address and as I kind of turn our attention more to responding to what we've heard today is the stream in which we reside in evangelicalism. And because we're children of modernity, we've been taught that the life of the mind is primary. And what we feel or what we sense or what we're really wrestling with in here has to be filtered and checked by the truth. And and listen, I. I don't take anything away from that reality. But I think that I have learned over time and pastoral ministry that for anyone to be able to heal, they must be able to express how they feel and have that feeling be met with empathy and compassion, not an exclamation explanation about why they shouldn't feel that way. So I don't know if you're married or not, but next time your wife's upset with you brothers, try to explain to her why she shouldn't use the rational argumentation about why she shouldn't be upset with you because of this and this and this.",
+  {
+    statementSentiment: 'encouragingEmpathy',
+    text:
+      "So one of the things I wanted to address and as I kind of turn our attention more to responding to what we've heard today is the stream in which we reside in evangelicalism. And because we're children of modernity, we've been taught that the life of the mind is primary. And what we feel or what we sense or what we're really wrestling with in here has to be filtered and checked by the truth. And and listen, I. I don't take anything away from that reality. But I think that I have learned over time and pastoral ministry that for anyone to be able to heal, they must be able to express how they feel and have that feeling be met with empathy and compassion, not an exclamation explanation about why they shouldn't feel that way. So I don't know if you're married or not, but next time your wife's upset with you brothers, try to explain to her why she shouldn't use the rational argumentation about why she shouldn't be upset with you because of this and this and this.",
+  },
   "And you're wrong because of these facts. Doesn't go well. Yeah, it doesn't. It's just not. And it just never because you should respond feeling to feel, in fact, to fact.",
   {
-    statementSentiment: '',
+    statementSentiment: 'invalidating',
     text:
       "And when someone shares a feeling with you and you confront that with fact, what you're saying to the person that stops them from being able to heal is that what you're feeling doesn't matter. And that can never be true. Now, what we're feeling might be misinformed, and that's where the truth gets laid on top of that. But but there's a time to be angry and to be afraid and to be confused and to be calloused.",
   },
@@ -279,7 +287,7 @@ export const sermon = [
     text:
       "And he will destroy and disembowel, according to the scriptures, those who happily participate in injustice. So we get to be angry because it's right to be angry. And trust that God will extend grace and forgiveness and heal, leading to repentance, or he will justly and right judge and in that space we get to sleep.",
   },
-  "So if the emotion that's just kind of been driving in your heart and in your head, the one you've been trying to wrestle and fight with is anger or rage, I want you to just stand up for me now. We want to pray for you and pray kind of the same thing. Pray the peace of God over your life, a confidence and in God's righteous indignation against those who would oppress and in justly harm.",
+  "So if the emotion that's just kind of been driving in your heart and in your head, the one you've been trying to wrestle and fight with is anger or rage, I want you to just stand up for me now. We want to pray for you and pray kind of the same thing. Pray the peace of God over your life, a confidence and in God's righteous indignation against those who would oppress and unjustly harm.",
   "So we're going to do the same thing now let's gather around these brothers and sisters of ours and lay a hand on him again. Maybe this is your first time here. Maybe you don't want anybody's hand on you. You are completely free to go. All right. I hear what he's saying. Don't put your hand on me and we won't put our hands on your right. This is just what we do in time. You'll let us. But this is a first date stuff, right? It's not time later.",
   'And so we want to pray for these brothers and sisters the same thing, that God would establish peace in their hearts, that he would heal that rage, that they could feel a release in trusting that God.',
   "Has vengeance in his right hand. Let's pray for these brothers and sisters of ours who are standing again. Let them hear your voice, pray for them out loud, let their healing come from the spirit of God through the prayers of his saints. Let's pray together.",

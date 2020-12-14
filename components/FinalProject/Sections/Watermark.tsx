@@ -6,8 +6,29 @@ import * as sermons from '../sermons'
 import DFWMap from '../Map'
 import InfluenceChart from '../InfluenceChart'
 import SubstanceChart from '../SubstanceChart'
-import { ChurchKeys, churches } from '../metadata'
-import { style } from 'd3'
+import { ChurchKeys, churches, classifiedStatements } from '../metadata'
+
+const statementTypes = Object.values(churches).reduce(
+  (acc, church) => {
+    acc[church.key] = sermons[church.key].reduce((lineAcc, line) => {
+      if (typeof line === 'string') {
+        return lineAcc
+      }
+      lineAcc[line.statementSentiment] = lineAcc[line.statementSentiment]
+        ? lineAcc[line.statementSentiment] + 1
+        : 1
+
+      acc.allStatements[line.statementSentiment] = acc.allStatements[line.statementSentiment]
+        ? acc.allStatements[line.statementSentiment] + 1
+        : 1
+
+      return lineAcc
+    }, {})
+    return acc
+  },
+  { allStatements: {} }
+)
+console.log(JSON.stringify(statementTypes))
 
 const Watermark: React.FC = () => {
   const [selectedChurch, setSelectedChurch] = useState<ChurchKeys>(null)
@@ -27,11 +48,20 @@ const Watermark: React.FC = () => {
     }
 
     [data-church] {
-      opacity: ${selectedChurch ? 0.2 : 0.9};
+      fill: var(--highlight);
+      opacity: ${selectedChurch ? 0.3 : 0.9};
       transition: opacity 1000ms ease;
 
       &:hover {
         opacity: 0.1;
+      }
+
+      &[data-sentiment='problematic'] {
+        fill: var(--problematic);
+      }
+
+      &[data-sentiment='productive'] {
+        fill: var(--productive);
       }
     }
 
@@ -46,28 +76,35 @@ const Watermark: React.FC = () => {
 
   const clickHandler = setSelectedChurch
 
-  const ChurchInfo = () => (
-    <>
-      <h2>
-        {churches[selectedChurch]?.pastor}{' '}
-        <span
-          style={{
-            fontSize: '0.75rem',
-            textTransform: 'uppercase',
-            fontWeight: 'lighter',
-            color: 'gray',
-            marginLeft: '6px',
-            fontFamily: 'nytfranklin',
-          }}
-        >
-          {churches[selectedChurch]?.name} - {churches[selectedChurch]?.city}
-        </span>
-      </h2>
-      {churches[selectedChurch]?.fastFacts?.map((fact, idx) => (
-        <p key={`${selectedChurch}-${idx}`}>- {fact}</p>
-      ))}
-    </>
-  )
+  const ChurchInfo = () => {
+    const church = churches[selectedChurch]
+    return (
+      <>
+        <h2>
+          {churches[selectedChurch]?.pastor}{' '}
+          <span
+            style={{
+              fontSize: '0.75rem',
+              textTransform: 'uppercase',
+              fontWeight: 'lighter',
+              color: 'gray',
+              marginLeft: '6px',
+              fontFamily: 'nytfranklin',
+            }}
+          >
+            {church?.name} ({church?.denomination}) - {church?.city}
+          </span>
+        </h2>
+        {church?.fastFacts &&
+          Object.entries(church?.fastFacts).map(([factType, fact], idx) => (
+            <p key={`${selectedChurch}-${idx}`}>
+              {' '}
+              <span>{factType}</span> {fact}
+            </p>
+          ))}
+      </>
+    )
+  }
 
   return (
     <Card className={cx(fillClass, styled.containerClass)}>
@@ -130,11 +167,10 @@ const Watermark: React.FC = () => {
             calculationKey={'churchTwitterFollowers'}
           />
         </div>
-
-        <div style={{ gridArea: 'substance' }}>
-          <h3>Substance</h3>
-          <SubstanceChart onElementClick={clickHandler} selectedChurch={selectedChurch} />
-        </div>
+      </div>
+      <div style={{ gridArea: 'substance' }}>
+        <h3>Substance</h3>
+        <SubstanceChart onElementClick={clickHandler} selectedChurch={selectedChurch} />
       </div>
 
       {/* <img
@@ -147,12 +183,29 @@ const Watermark: React.FC = () => {
         <p className={styled.sermonClass}>
           {sermons[selectedChurch]?.map((paragraph, idx) => {
             if (typeof paragraph === 'string') {
-              return <span key={`${selectedChurch}-${idx}`}>{paragraph}</span>
+              return (
+                <span
+                  key={`${selectedChurch}-${idx}`}
+                  style={{
+                    animation: `${50 * idx}ms ease fadein`,
+                  }}
+                >
+                  {paragraph}
+                </span>
+              )
             }
             return (
               <span
                 key={`${selectedChurch}-${idx}`}
-                className={cx(styled.spanClass, styled.proBLM)}
+                className={cx(
+                  styled.spanClass,
+                  classifiedStatements[paragraph.statementSentiment] === 'productive'
+                    ? styled.proBLM
+                    : styled.proPolice
+                )}
+                style={{
+                  animation: `${30 * idx}ms easein fadein`,
+                }}
               >
                 {paragraph.text}
               </span>

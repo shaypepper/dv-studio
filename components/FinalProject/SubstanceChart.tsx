@@ -1,5 +1,5 @@
-import React from 'react'
-import { churches } from './metadata'
+import React, { useState } from 'react'
+import { churches, ChurchKeys, classifiedStatements, sentimentLabels } from './metadata'
 import { css } from 'pretty-lights'
 import LogoMask from './Map/LogoMask'
 
@@ -11,6 +11,7 @@ const labelClass = css`
 `
 
 const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
+  const [selectedSentiment, setSelectedSentiment] = useState(null)
   return (
     <div style={{}}>
       <svg viewBox="0 0 100 40">
@@ -37,24 +38,8 @@ const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
                 transform={`translate(0 ${verticalCoordinate})`}
               />
             )
-            if (church.minutes.length === 1) {
-              return (
-                <g
-                  onClick={() => {
-                    onElementClick(church.key)
-                  }}
-                  data-church={church.key}
-                >
-                  {logo}
-                  <rect
-                    height={2}
-                    width={church.minutes[0].length}
-                    transform={`translate(3 ${verticalCoordinate})`}
-                  ></rect>
-                </g>
-              )
-            }
             let currentPosition = 3
+            let totalMinutes = 0
             return (
               <g
                 key={`thing${i}`}
@@ -63,8 +48,24 @@ const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
                 }}
                 data-church={church.key}
               >
-                {church.minutes.map((occasion, j) => {
+                {church.minutes.concat([null]).map((occasion, j) => {
                   currentPosition += church.minutes[j - 1] ? church.minutes[j - 1].length + 0.5 : 0
+
+                  if (!occasion) {
+                    return (
+                      <React.Fragment key={`thing${j}`}>
+                        <text
+                          transform={`translate(${currentPosition + 0.5} ${
+                            verticalCoordinate + 1.6
+                          })`}
+                          fontSize="2"
+                        >
+                          {totalMinutes} minutes
+                        </text>
+                      </React.Fragment>
+                    )
+                  }
+                  totalMinutes += occasion.length
                   return (
                     <React.Fragment key={`thing${j}`}>
                       {logo}
@@ -80,9 +81,18 @@ const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
             )
           })}
         </g>
+
         <g transform="translate(0 20)">
           <text className={labelClass} transform="translate(0 1)">
             How did he talk about it?
+          </text>
+          <circle transform="translate(25 0.25)" fill="var(--problematic)" r="0.75"></circle>
+          <text className={labelClass} transform="translate(26 1)">
+            PROBLEMATIC
+          </text>
+          <circle transform="translate(39.5 0.25)" fill="var(--productive)" r="0.75"></circle>
+          <text transform="translate(41 1)" className={labelClass}>
+            PRODUCTIVE
           </text>
           {Object.values(churches).map((church, i) => {
             const verticalCoordinate = 2.5 * i + 3
@@ -98,35 +108,46 @@ const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
             const dots = [logo]
 
             const addDot = (category) => ([premise, n]) => {
-              console.log(category)
-              new Array(n)
-                .fill(true)
-                .forEach(() =>
-                  dots.push(
-                    <circle
-                      transform={`translate(${dots.length * 2.5 + 2} ${verticalCoordinate})`}
-                      r="1"
-                      fill={
-                        category === 'problematicStatements'
-                          ? 'var(--problematic)'
-                          : 'var(--productive)'
-                      }
-                      data-church={`${church.key}`}
-                    />
-                  )
-                )
+              dots.push(
+                <circle
+                  transform={`translate(${dots.length * 2.5 + 2} ${verticalCoordinate})`}
+                  r="1"
+                  fill={`var(--${category})`}
+                  data-sentiment={category}
+                  data-church={`${church.key}`}
+                  onClick={() => {
+                    console.log(premise)
+                    if (church.key === selectedChurch) {
+                      setSelectedSentiment(premise)
+                    }
+                  }}
+                />
+              )
             }
-            Object.entries(church.problematicStatements).forEach(addDot('problematicStatements'))
-            Object.entries(church.notAsProblematicStatements).forEach(
-              addDot('notAsProblematicStatements')
-            )
+            if (church.sentiments) {
+              Object.entries(church.sentiments)
+                .filter(([c, count]) => classifiedStatements[c] === 'problematic')
+                .forEach(addDot('problematic'))
+
+              Object.entries(church.sentiments)
+                .filter(([c, count]) => classifiedStatements[c] === 'productive')
+                .forEach(addDot('productive'))
+            }
             return (
               <g
                 onClick={() => {
                   onElementClick(church.key)
+                  if (church.key !== selectedChurch) {
+                    setSelectedSentiment(null)
+                  }
                 }}
               >
                 {dots}
+                {selectedSentiment && church.key === selectedChurch && (
+                  <g transform={`translate(${dots.length * 2.5 + 2} ${verticalCoordinate + 0.85})`}>
+                    <text fontSize="2.5px">{sentimentLabels[selectedSentiment]}</text>
+                  </g>
+                )}
               </g>
             )
           })}

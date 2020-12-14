@@ -209,9 +209,25 @@ const Map: React.FC = ({ className, selectedChurch }) => {
         <path className="cls-2" d="M13.31,17.16a.59.59,0,0,1-.25.07,1.15,1.15,0,0,1-.26,0" />
       </g>
       <g id="Locations">
-        <g transform="translate(19 21)" fill={colors.primary}>
+        <g transform="translate(19 21)">
           <circle r="1" />
-          <path d="M-1,0 L0,2 L1,0 Z" />
+          <path d="M-1,0 L0,2 L1,0 Z" transform="translate(0 0.2)" />
+          <text
+            transform="translate(-6 1)"
+            fontSize="0.75"
+            fontFamily="nytfranklin"
+            fontWeight="300"
+          >
+            SITE OF
+          </text>
+          <text
+            transform="translate(-6 2)"
+            fontSize="0.75"
+            fontFamily="nytfranklin"
+            fontWeight="300"
+          >
+            THE SHOOTING
+          </text>
         </g>
         <rect
           mask="url(#fbcLogoMask)"
