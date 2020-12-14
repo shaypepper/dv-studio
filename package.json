@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "eslint": "eslint --cache --cache-location .caches/eslint/ --ext .ts,.tsx,.js,.jsx"
+    "eslint": "eslint --cache --cache-location .caches/eslint/ --ext .ts,.tsx,.js,.jsx",
+    "export": "next export -o docs"
   },
   "dependencies": {
     "@types/d3": "^5.16.3",
