@@ -1,12 +1,12 @@
 import React from 'react'
 import { ChurchKeys } from '../metadata'
-import { colors } from '../styled'
 import LogoMask from './LogoMask'
-import { css } from 'pretty-lights'
 
-const Map: React.FC = ({ className, selectedChurch }) => {
-  const fillColor = colors.accent1
+type MapProps = {
+  className?: string
+}
 
+const Map: React.FC<MapProps> = ({ className }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" className={className}>
       <defs>
@@ -24,12 +24,12 @@ const Map: React.FC = ({ className, selectedChurch }) => {
           <circle cx="13.5" cy="13.5" r="17.5" fill="url('#radialGradient')" />
         </mask>
 
-        <LogoMask church="watermark" size="2"></LogoMask>
-        <LogoMask church="tvc" size="2"></LogoMask>
-        <LogoMask church="covenant" size="2"></LogoMask>
-        <LogoMask church="prestonwood" size="2"></LogoMask>
-        <LogoMask church="fellowship" size="2"></LogoMask>
-        <LogoMask church="fbc" size="2"></LogoMask>
+        <LogoMask church="watermark" size={2}></LogoMask>
+        <LogoMask church="tvc" size={2}></LogoMask>
+        <LogoMask church="covenant" size={2}></LogoMask>
+        <LogoMask church="prestonwood" size={2}></LogoMask>
+        <LogoMask church="fellowship" size={2}></LogoMask>
+        <LogoMask church="fbc" size={2}></LogoMask>
       </defs>
       <text transform="translate(4 2)" fontSize="0.75" fontFamily="nytfranklin" fontWeight="300">
         MAP OF CHURCHES IN DALLAS-FORT WORTH
@@ -235,9 +235,6 @@ const Map: React.FC = ({ className, selectedChurch }) => {
           height="2"
           width="2"
           data-church="fbc"
-          onClick={() => {
-            onElementClick(ChurchKeys.FBC)
-          }}
         />
 
         <rect
@@ -246,9 +243,6 @@ const Map: React.FC = ({ className, selectedChurch }) => {
           height="2"
           width="2"
           data-church="watermark"
-          onClick={() => {
-            onElementClick(ChurchKeys.Watermark)
-          }}
         />
         <rect
           mask="url(#tvcLogoMask)"
@@ -256,9 +250,6 @@ const Map: React.FC = ({ className, selectedChurch }) => {
           height="2.2"
           width="2.2"
           data-church="tvc"
-          onClick={() => {
-            onElementClick(ChurchKeys.TVC)
-          }}
         />
 
         <rect
@@ -267,9 +258,6 @@ const Map: React.FC = ({ className, selectedChurch }) => {
           height="2"
           width="2"
           data-church="prestonwood"
-          onClick={() => {
-            onElementClick(ChurchKeys.Prestonwood)
-          }}
         />
         <rect
           mask="url(#covenantLogoMask)"
@@ -277,21 +265,13 @@ const Map: React.FC = ({ className, selectedChurch }) => {
           width="2"
           transform="translate(15.25 7)"
           data-church="covenant"
-          onClick={() => {
-            console.log('click')
-            onElementClick(ChurchKeys.Covenant)
-          }}
         />
         <rect
           mask="url(#fellowshipLogoMask)"
           height="3"
           width="3"
           transform="translate(6.75 9)"
-          r="0.5"
           data-church={ChurchKeys.Fellowship}
-          onClick={() => {
-            onElementClick(ChurchKeys.Fellowship)
-          }}
         />
       </g>
     </svg>

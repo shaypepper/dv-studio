@@ -4,31 +4,9 @@ import * as styled from './styled'
 import { css, cx } from 'pretty-lights'
 import * as sermons from '../sermons'
 import DFWMap from '../Map'
-import InfluenceChart from '../InfluenceChart'
-import SubstanceChart from '../SubstanceChart'
+import InfluenceChart from '../../Charts/InfluenceChart'
+import SubstanceChart from '../../Charts/SubstanceChart'
 import { ChurchKeys, churches, classifiedStatements } from '../metadata'
-
-const statementTypes = Object.values(churches).reduce(
-  (acc, church) => {
-    acc[church.key] = sermons[church.key].reduce((lineAcc, line) => {
-      if (typeof line === 'string') {
-        return lineAcc
-      }
-      lineAcc[line.statementSentiment] = lineAcc[line.statementSentiment]
-        ? lineAcc[line.statementSentiment] + 1
-        : 1
-
-      acc.allStatements[line.statementSentiment] = acc.allStatements[line.statementSentiment]
-        ? acc.allStatements[line.statementSentiment] + 1
-        : 1
-
-      return lineAcc
-    }, {})
-    return acc
-  },
-  { allStatements: {} }
-)
-console.log(JSON.stringify(statementTypes))
 
 const Watermark: React.FC = () => {
   const [selectedChurch, setSelectedChurch] = useState<ChurchKeys>(null)
@@ -121,11 +99,7 @@ const Watermark: React.FC = () => {
       <div className={styled.chartArea}>
         <div style={{ zIndex: -1, gridArea: 'map' }}>
           <h3>Location</h3>
-          <DFWMap
-            className={styled.mapClass}
-            selectedChurch={selectedChurch}
-            onElementClick={clickHandler}
-          />
+          <DFWMap className={styled.mapClass} />
         </div>
 
         {/* <div>
@@ -140,21 +114,21 @@ const Watermark: React.FC = () => {
         </div>
         <div style={{ gridArea: 'influence1' }}>
           <InfluenceChart
-            onElementClick={clickHandler}
+            onElementClick={(a: ChurchKeys) => clickHandler(a)}
             church={selectedChurch}
             calculationKey={'twitterFollowers'}
           />
         </div>
         <div style={{ gridArea: 'influence3' }}>
           <InfluenceChart
-            onElementClick={clickHandler}
+            onElementClick={(a: ChurchKeys) => clickHandler(a)}
             church={selectedChurch}
             calculationKey={'attendees'}
           />
         </div>
         <div style={{ gridArea: 'influence4' }}>
           <InfluenceChart
-            onElementClick={clickHandler}
+            onElementClick={(a: ChurchKeys) => clickHandler(a)}
             church={selectedChurch}
             calculationKey={'podcastReviews'}
           />
@@ -162,7 +136,7 @@ const Watermark: React.FC = () => {
 
         <div style={{ gridArea: 'influence2' }}>
           <InfluenceChart
-            onElementClick={clickHandler}
+            onElementClick={(a: ChurchKeys) => clickHandler(a)}
             church={selectedChurch}
             calculationKey={'churchTwitterFollowers'}
           />
@@ -170,7 +144,10 @@ const Watermark: React.FC = () => {
       </div>
       <div style={{ gridArea: 'substance' }}>
         <h3>Substance</h3>
-        <SubstanceChart onElementClick={clickHandler} selectedChurch={selectedChurch} />
+        <SubstanceChart
+          onElementClick={(a: ChurchKeys) => clickHandler(a)}
+          selectedChurch={selectedChurch}
+        />
       </div>
 
       {/* <img

@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
-import { churches, ChurchKeys, classifiedStatements, sentimentLabels } from './metadata'
+import { churches, classifiedStatements, sentimentLabels } from '../FinalProject/metadata'
 import { css } from 'pretty-lights'
-import LogoMask from './Map/LogoMask'
+import LogoMask from '../FinalProject/Map/LogoMask'
+
+type SubstanceChartTypes = {
+  selectedChurch: string
+  onElementClick: (church: string) => void
+}
 
 const labelClass = css`
   text-transform: uppercase;
@@ -10,18 +15,18 @@ const labelClass = css`
   font-weight: 300;
 `
 
-const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
+const SubstanceChart: React.FC<SubstanceChartTypes> = ({ selectedChurch, onElementClick }) => {
   const [selectedSentiment, setSelectedSentiment] = useState(null)
   return (
     <div style={{}}>
       <svg viewBox="0 0 100 40">
         <defs>
-          <LogoMask church="watermark" size="2"></LogoMask>
-          <LogoMask church="tvc" size="2"></LogoMask>
-          <LogoMask church="covenant" size="2"></LogoMask>
-          <LogoMask church="prestonwood" size="2"></LogoMask>
-          <LogoMask church="fellowship" size="2"></LogoMask>
-          <LogoMask church="fbc" size="2"></LogoMask>
+          <LogoMask church="watermark" size={2}></LogoMask>
+          <LogoMask church="tvc" size={2}></LogoMask>
+          <LogoMask church="covenant" size={2}></LogoMask>
+          <LogoMask church="prestonwood" size={2}></LogoMask>
+          <LogoMask church="fellowship" size={2}></LogoMask>
+          <LogoMask church="fbc" size={2}></LogoMask>
         </defs>
         <text className={labelClass} transform="translate(0 2)">
           How long did he talk about it?
@@ -107,7 +112,8 @@ const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
             )
             const dots = [logo]
 
-            const addDot = (category) => ([premise, n]) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const addDot = (category: string) => ([premise, n]) => {
               dots.push(
                 <circle
                   transform={`translate(${dots.length * 2.5 + 2} ${verticalCoordinate})`}
@@ -126,15 +132,16 @@ const SubstanceChart: React.FC = ({ selectedChurch, onElementClick }) => {
             }
             if (church.sentiments) {
               Object.entries(church.sentiments)
-                .filter(([c, count]) => classifiedStatements[c] === 'problematic')
+                .filter(([c]) => classifiedStatements[c] === 'problematic')
                 .forEach(addDot('problematic'))
 
               Object.entries(church.sentiments)
-                .filter(([c, count]) => classifiedStatements[c] === 'productive')
+                .filter(([c]) => classifiedStatements[c] === 'productive')
                 .forEach(addDot('productive'))
             }
             return (
               <g
+                key={`substance-${church.key}`}
                 onClick={() => {
                   onElementClick(church.key)
                   if (church.key !== selectedChurch) {

@@ -1,4 +1,21 @@
-import { watermark as sermon } from './sermons'
+export interface ChurchMetadata {
+  name: string
+  key: ChurchKeys
+  pastor: string
+  twitterFollowers: number
+  churchTwitterFollowers: number
+  attendees: number
+  city: string
+  podcastReviews: number
+  minutes: Array<{ type: string; length: number }>
+  denomination: string
+  fastFacts: {
+    [key: string]: string
+  }
+  sentiments: {
+    [key: string]: number
+  }
+}
 
 export enum ChurchKeys {
   Watermark = 'watermark',
@@ -51,7 +68,7 @@ export const sentimentLabels = {
 }
 
 export const churches = {
-  [ChurchKeys.Watermark]: {
+  [ChurchKeys.Watermark]: <ChurchMetadata>{
     name: 'Watermark Church',
     key: ChurchKeys.Watermark,
     pastor: 'Todd Wagner',
@@ -92,7 +109,7 @@ export const churches = {
       fightAgainstInjustice: 1,
     },
   },
-  [ChurchKeys.TVC]: {
+  [ChurchKeys.TVC]: <ChurchMetadata>{
     name: 'The Village Church',
     key: ChurchKeys.TVC,
     pastor: 'Matt Chandler',
@@ -119,7 +136,7 @@ export const churches = {
       invalidating: 1,
     },
   },
-  [ChurchKeys.Covenant]: {
+  [ChurchKeys.Covenant]: <ChurchMetadata>{
     key: ChurchKeys.Covenant,
     name: 'Covenant Church',
     pastor: 'Mike Hayes',
@@ -149,7 +166,7 @@ export const churches = {
       importanceOfDiversity: 1,
     },
   },
-  [ChurchKeys.Prestonwood]: {
+  [ChurchKeys.Prestonwood]: <ChurchMetadata>{
     key: ChurchKeys.Prestonwood,
     name: 'Prestonwood Baptist Church',
     pastor: 'Jarrett Stephens',
@@ -158,13 +175,7 @@ export const churches = {
     attendees: 15815,
     city: 'Plano, TX',
     podcastReviews: 24,
-    problematicStatements: {
-      radical: 1,
-    },
-    notAsProblematicStatements: {
-      blackLivesMatter: 4,
-    },
-    minutes: [{ type: sermon, length: 32 }],
+    minutes: [{ type: 'sermon', length: 32 }],
     denomination: 'SBC',
     fastFacts: {
       'JIST OF THE PANEL':
@@ -178,7 +189,7 @@ export const churches = {
     },
     sentiments: { theAnswerIsJesus: 3, encouragingEmpathy: 1 },
   },
-  [ChurchKeys.Fellowship]: {
+  [ChurchKeys.Fellowship]: <ChurchMetadata>{
     key: ChurchKeys.Fellowship,
     name: 'Fellowship Church',
     pastor: 'Ed Young',
@@ -199,7 +210,7 @@ export const churches = {
     },
     sentiments: { theAnswerIsJesus: 1, absenceOfTension: 3 },
   },
-  [ChurchKeys.FBC]: {
+  [ChurchKeys.FBC]: <ChurchMetadata>{
     key: ChurchKeys.FBC,
     name: 'First Baptist Dallas',
     pastor: 'Robert Jeffress',
@@ -208,7 +219,7 @@ export const churches = {
     attendees: 2632,
     city: 'Dallas, TX',
     podcastReviews: 200,
-    minutes: [{ type: sermon, length: 0 }],
+    minutes: [{ type: 'sermon', length: 0 }],
     denomination: 'SBC',
     fastFacts: {
       'JIST OF THE SERMON': "Jeffress chose not to give a sermon about the week's events.",

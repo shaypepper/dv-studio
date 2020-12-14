@@ -68,7 +68,7 @@ const FinalProject: React.FC = () => {
         </Card>
 
         <Card>
-          <p className={quickCardClass}>Let's analyze the sermons the Sunday after.</p>
+          <p className={quickCardClass}>Let′s analyze the sermons the Sunday after.</p>
         </Card>
 
         <Watermark />

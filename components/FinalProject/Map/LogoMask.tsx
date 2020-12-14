@@ -1,6 +1,11 @@
 import React from 'react'
 
-const LogoMask: React.FC = ({ church, size }) => {
+type LogoMaskProps = {
+  church: string
+  size: number
+}
+
+const LogoMask: React.FC<LogoMaskProps> = ({ church, size }) => {
   return (
     <mask id={`${church}LogoMask`}>
       <image href={`/img/logos/${church}.svg`} height={size} width={size} fill={'white'} />

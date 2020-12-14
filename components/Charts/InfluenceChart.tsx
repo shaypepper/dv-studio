@@ -1,11 +1,12 @@
-import React from 'react'
-import { pack, hierarchy } from 'd3-hierarchy'
-import { ChurchKeys, churches } from './metadata'
+import React, { ReactElement } from 'react'
+import { pack, hierarchy, HierarchyCircularNode } from 'd3-hierarchy'
+import { ChurchKeys, churches, ChurchMetadata } from '../FinalProject/metadata'
 import { css } from 'pretty-lights'
 
 type InfluenceChartProps = {
   calculationKey: string
   church: ChurchKeys
+  onElementClick: (data: string) => void
 }
 
 const labels = {
@@ -32,19 +33,21 @@ const InfluenceChart: React.FC<InfluenceChartProps> = ({
   return (
     <div style={{}}>
       <svg height="100%" width="100%" viewBox="0 -30 100 130">
-        {packedData.leaves().map((node, i) => {
-          return (
-            <>
-              <circle
-                r={node.r}
-                key={node.data.key}
-                transform={`translate(${node.x} ${node.y})`}
-                data-church={node.data.key}
-                onClick={() => onElementClick(node.data.key)}
-              ></circle>
-            </>
-          )
-        })}
+        {packedData.leaves().map(
+          (node: HierarchyCircularNode<ChurchMetadata>): ReactElement => {
+            return (
+              <>
+                <circle
+                  r={node.r}
+                  key={node.data.key}
+                  transform={`translate(${node.x} ${node.y})`}
+                  data-church={node.data.key}
+                  onClick={() => onElementClick(node.data.key)}
+                ></circle>
+              </>
+            )
+          }
+        )}
         <text className={labelClass} transform="translate(0 -18)" fontSize="8px" fontWeight="300">
           {labels[calculationKey]}
         </text>
