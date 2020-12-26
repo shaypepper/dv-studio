@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { css } from 'pretty-lights'
 import Card from './Card'
-import Watermark from './Sections/Watermark'
+import ChurchInfo from './Sections/ChurchInfo'
 
 const containerClass = css`
   scroll-snap-type: y mandatory;
@@ -71,7 +71,7 @@ const FinalProject: React.FC = () => {
           <p className={quickCardClass}>Let′s analyze the sermons the Sunday after.</p>
         </Card>
 
-        <Watermark />
+        <ChurchInfo />
       </main>
     </>
   )

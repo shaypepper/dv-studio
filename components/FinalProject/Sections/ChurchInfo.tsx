@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import Card from '../Card'
 import * as styled from './styled'
 import { css, cx } from 'pretty-lights'
-import * as sermons from '../sermons'
+import * as sermons from '../data/sermons'
 import DFWMap from '../Map'
-import InfluenceChart from '../../Charts/InfluenceChart'
-import SubstanceChart from '../../Charts/SubstanceChart'
-import { ChurchKeys, churches, classifiedStatements } from '../metadata'
+import InfluenceChart from '../Charts/InfluenceChart'
+import SubstanceChart from '../Charts/SubstanceChart'
+import { ChurchKeys, churches, classifiedStatements } from '../data/metadata'
 
 const Watermark: React.FC = () => {
   const [selectedChurch, setSelectedChurch] = useState<ChurchKeys>(null)
@@ -101,14 +101,6 @@ const Watermark: React.FC = () => {
           <h3>Location</h3>
           <DFWMap className={styled.mapClass} />
         </div>
-
-        {/* <div>
-            <p data-connotation="negative">Only Jesus can fix this</p>
-            <p data-connotation="negative">We need to have unity</p>
-            <p data-connotation="negative">Be careful not to ask for too much</p>
-            <p data-connotation="positive">Black Lives Matter</p>
-            <p data-connotation="positive">The country has a history of systematic racism</p>
-          </div> */}
         <div style={{ gridArea: 'influence' }}>
           <h3>Influence</h3>
         </div>

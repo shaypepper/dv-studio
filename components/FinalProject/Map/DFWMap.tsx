@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChurchKeys } from '../metadata'
+import { ChurchKeys } from '../data/metadata'
 import LogoMask from './LogoMask'
 
 type MapProps = {

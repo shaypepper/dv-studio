@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { churches, classifiedStatements, sentimentLabels } from '../FinalProject/metadata'
+import { churches, classifiedStatements, sentimentLabels } from '../data/metadata'
 import { css } from 'pretty-lights'
-import LogoMask from '../FinalProject/Map/LogoMask'
+import LogoMask from '../Map/LogoMask'
 
 type SubstanceChartTypes = {
   selectedChurch: string

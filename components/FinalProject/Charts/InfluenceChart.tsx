@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { pack, hierarchy, HierarchyCircularNode } from 'd3-hierarchy'
-import { ChurchKeys, churches, ChurchMetadata } from '../FinalProject/metadata'
+import { ChurchKeys, churches, ChurchMetadata } from '../data/metadata'
 import { css } from 'pretty-lights'
 
 type InfluenceChartProps = {
