@@ -1,6 +1,6 @@
 # White Pastors Preaching on Race
 
-[Deployed project](https://dv-studio-bgvhbalpm.vercel.app/)
+[Deployed project](https://dv-studio.vercel.app/)
 
 [Data Documentation](https://github.com/shaypepper/dv-studio/tree/main/components/FinalProject/data)
 
