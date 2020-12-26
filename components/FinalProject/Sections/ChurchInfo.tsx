@@ -9,7 +9,7 @@ import SubstanceChart from '../Charts/SubstanceChart'
 import { ChurchKeys, churches, classifiedStatements } from '../data/metadata'
 
 const Watermark: React.FC = () => {
-  const [selectedChurch, setSelectedChurch] = useState<ChurchKeys>(null)
+  const [selectedChurch, setSelectedChurch] = useState<ChurchKeys>(ChurchKeys.Watermark)
   const fillClass = css`
     &::before {
       content: '';
@@ -141,12 +141,6 @@ const Watermark: React.FC = () => {
           selectedChurch={selectedChurch}
         />
       </div>
-
-      {/* <img
-            src="/img/watermark-todd.png"
-            alt="Pastor Todd Wagner"
-            className={styled.pastorClass}
-          /> */}
 
       <div className={styled.sermonContainerClass}>
         <p className={styled.sermonClass}>

@@ -27,7 +27,13 @@ const FinalProject: React.FC = () => {
         <link href="https://a1.nyt.com/fonts/css/fonts.css" type="stylesheet"></link>
       </Head>
       <main className={containerClass}>
-        <Card></Card>
+        <Card>
+          <p className={quickCardClass}>
+            Preaching on Race <br />
+            <span style={{ fontSize: '1rem' }}>By Shay Culpepper</span>
+          </p>
+          <p></p>
+        </Card>
         <Card>
           <p className={quickCardClass}>
             On July 5th, 2016, Alton Sterling was murdered by Baton Rouge police officers.
